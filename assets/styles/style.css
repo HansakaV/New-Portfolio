@@ -4,3 +4,64 @@ body {
     color: #333;
 }
 
+header{
+    background: cadetblue;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+}
+
+.navbar{
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.nav-links{
+    list-style: none;
+    margin: 0px;
+}
+
+.nav-links>li{
+    padding: 0px 10px;
+    display: inline;
+}
+.nav-links>li>a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background: black;
+    color: white;
+}
+footer>h4{
+    font-size: 30px;
+    margin: 5px 0px;
+    padding: 20px;
+}
+
+.footer-data{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+}
+.footer-ribon{
+    background: black;
+    text-align: center;
+    padding: 20px;
+}
+
