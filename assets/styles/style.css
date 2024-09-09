@@ -33,6 +33,53 @@ header{
     text-decoration: none;
 }
 
+.heromain{
+    margin-top: 70px;
+    padding: 20px;
+    width: 100vw;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.leftside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    background-color: #f9f9f9; /* Light background color for cards */
+    border: 1px solid #ddd; /* Border for card */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevents overflow */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center the text */
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.project-card h4 {
+    margin: 16px 0 8px; /* Margin for heading */
+    font-size: 1.2em;
+}
+
+.project-card p {
+    padding: 0 16px 16px; /* Padding for paragraph */
+    font-size: 0.95em;
+}
 
 
 
