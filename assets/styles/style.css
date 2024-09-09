@@ -4,25 +4,31 @@ body {
     color: #333;
 }
 
-header{
-    background: cadetblue;
+.header{
+    background: wheat;
     width: 100vw;
     position: fixed;
     top: 0;
+    z-index: 1000;
 }
 
 .navbar{
-    height: fit-content;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
 }
 
 .nav-links{
     list-style: none;
-    margin: 0px;
+    display: flex;
+    gap: 20px;
 }
 
 .nav-links>li{
@@ -31,6 +37,13 @@ header{
 }
 .nav-links>li>a{
     text-decoration: none;
+    color: #333333;
+    font-weight: bolder;
+    transition: color 0.3s;
+}
+
+.nav-links>li>a:hover{
+    color: brown;
 }
 
 .heromain{
@@ -46,7 +59,10 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    /*text-align: center;*/
+}
+.rightside{
+    margin-right: 50px;
 }
 
 .projects {
@@ -54,6 +70,15 @@ header{
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
+}
+.sectiontitle{
+    font-weight: bolder;
+    color: black;
+    font-size: 25px;
+    box-shadow: #007bff;
+    padding: 10px;
+    margin-left: 20px;
+    text-decoration: underline;
 }
 
 .project-card {
