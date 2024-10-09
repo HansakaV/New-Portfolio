@@ -110,14 +110,24 @@
     font-size: clamp(2.5rem,0.5rem + 5vw,3rem) ;
 
 }
-
 */
+
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     color: white;
-    background-color: black;
+    background-color: #0C1E32;
 }
+
+/*body {
+    background-color: #0C1E32; !* Dark background *!
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}*/
 
 .header {
     background-color: #333;
@@ -219,7 +229,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.myname{
+#myname{
     font-weight: bolder;
     font-size: 50px;
     box-shadow: #0056b3;
@@ -239,6 +249,8 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+    color: wheat;
+    text-shadow: 0 0 5px green;
 }
 
 .text-item {
@@ -275,37 +287,60 @@ body {
 
 
 
-
-.leftside>div>h1{
-
-
-}
-.rightside>div{
+.circle-container>div{
     width: 500px;
     height: 80vh;
     border-radius: 100%;
     overflow: hidden;
-    box-shadow: 0 0 50px #077b32;
+    background: transparent;
+    box-shadow: 0 0 30px 10px rgba(0, 255, 255, 0.5),
+    0 0 60px 20px rgba(139, 0, 255, 0.5);
     margin-top: 60px;
     margin-left: 0;
 }
-.rightside>div>img{
+.circle-container>div>img{
     width: 500px;
     height: 80vh;
     border-radius: 100%;
     overflow: hidden;
     box-shadow: 0 0 50px #077b32;
-    top: 60px;
+    top: 40px;
+    border: 5px solid #FFFFFF;
 
 }
+
+
+
+
+.circle-container::before {
+   /* content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    padding: 5px;*/
+    background: conic-gradient(from 180deg, #00FFFF, #8B00FF);
+    filter: blur(20px);
+    /*z-index: -1;*/
+}
+
 .works{
-    font-weight: bolder;
-    background-color: #077b32;
-    border-radius: 25px;
+    font-weight: 550;
+
 
 }
-.social-icons>li>a{
+.social-icons>a{
     display: inline;
+    gap: 10px;
+}
+.download{
+    width: 25px;
+    font-weight: 550;
+    border-radius: 30px;
+    background-color: #077b32;
+    box-shadow:0 0 50px green;
 }
 
 
@@ -414,6 +449,85 @@ body {
     background-color: #0056b3;
 }
 
+/*new */
+
+@import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quando&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Quando', serif;
+    scroll-behavior: smooth;
+}
+
+.footer {
+    width: 100%;
+    background-color:#241a1b;
+}
+
+.footer-conteiner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contato-creditos {
+    color: white;
+    font-family: 'Quando', serif;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.icons {
+    display: flex;
+    gap: 25px;
+}
+
+@media (max-width:1200px) {
+    .contato-creditos{
+        text-align: center;
+    }
+
+    .footer-conteiner {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+}
+
+.links1, .links2 {
+    height: 52px;
+    width: 52px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.links:hover {
+    transform: rotate(-360deg);
+}
+
+.links1 {
+    background-image: url(../img/githubff2.svg);
+}
+
+.links2 {
+    background-image: url(../img/linkedinff2.svg);
+}
+
+.transparente {
+    transition: ease-in-out 0.3s;
+}
+
+.transparente:hover {
+    opacity: 0;
+}
 
 
 
@@ -447,3 +561,121 @@ footer>h4{
     padding: 20px;
 }
 
+#projetos {
+    background-color: #352728;
+}
+
+.portfolio {
+    background-image: url(https://cdn.discordapp.com/attachments/957316110653464596/1094558908531605624/image.png);
+    background-size: cover;
+}
+
+.projetos {
+    padding-top: 93px;
+}
+
+.projetos h2, .projetos a {
+    text-align: center;
+}
+
+.projetos h2 {
+    padding-bottom: 70px;
+}
+
+button {
+    padding: 10px 100px;
+    border-radius: 25px;
+    cursor: pointer;
+    color: white;
+    background-color: #493737;
+    border: none;
+    transition: ease-in-out 0.3s;
+}
+
+button:hover {
+    background-color: #a16c60;
+}
+
+.github-link {
+    margin: 0 auto;
+    padding-top: 35px;
+    padding-bottom: 93px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+.projetos a {
+    display: inline;
+}
+
+.pro {
+    background-color: #C4C4C4;
+    height: 195px;
+    width: 310px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: ease-in-out 0.3s;
+}
+
+.pro div p {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+    color: #C4C4C4;
+}
+
+.pro:hover {
+    letter-spacing: 5px;
+}
+
+.pro div {
+    background-color: #705656;
+    width: 1000px;
+    text-align: center;
+    padding: 5% 0;
+    transform: rotate(-50deg);
+}
+
+.escondido {
+    opacity: 0;
+    display: none;
+    transition: 1000ms;
+}
+
+.projetos-itens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 29.5px;
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width:1200px) {
+    .projetos{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #projetos {
+        display: flex;
+        justify-content: center;
+    }
+
+    .projetos-itens {
+        flex-direction: column;
+    }
+
+}
+@media (max-width:950px) {
+    .pro {
+        max-width: 300px;
+    }
+
+}
