@@ -7,11 +7,10 @@
     <meta name="author" content="ijse">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/images/portfolio_logo%20(2).jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="stylesheet" href="assets/styles/aboutme.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 
     <title>Portfolio</title>
 </head>
@@ -21,25 +20,17 @@
 <header class="header">
     <nav class="navbar">
         <div class="logo">
-            Mahesh <span>Hansaka</span>
+            Portfolio.
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#about">About </a></li>
+            <li><a href="#skills">Skills & Education</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#assignments">Assignments</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <i class="fa-solid fa-bars hamburg"></i>
-        <div class="dropdown">
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Skills</a>
-                <a href="#">Contact</a>
-                <i class="fa-solid fa-xmark cancel"></i>
-            </div>
-        </div>
     </nav>
 </header>
 
@@ -48,37 +39,25 @@
     <section class="heromain">
         <!--leftSide-->
         <section class="leftside">
-            <div>
-                <h2 class="subtext">Hello It's Me </h2>
-                <div class="animate__animated animate__bounce animate__faster" id="myname">Mahesh Hansaka</div>
-                <br>
-                <div class="para" data-aos="zoom-in-down">
+            <div class="home-content">
 
-                    <p>
-                        Welcome to my portfolio!
-                        I am a dedicated full stack developer with a mastery of Java.
-                        With a strong foundation in both front-end and back-end technologies, I create seamless and efficient applications. Explore my projects and see how I bring ideas to life with clean, robust code and innovative solutions.
-                    </p>
-
+                <h3 >Hello It's Me </h3>
+                <h1>Mahesh Hansaka</h1>
+                <div class="typewriter-container">
+                    <h1 class="typewriter-text"></h1>
                 </div>
-                <h2 class="subtext">And I'm A</h2>
-
-                <h2 class="rotating-text">
-                    <span class="text-item">Full Stack Developer</span>
-                    <span class="text-item">Creative Web Developer</span>
-                    <span class="text-item">UI/UX Designer</span>
-                    <span class="text-item">YouTuber</span>
-                </h2>
-                <br>
-                <a href="#work" class="works">View My Work</a>
-                <br>
-                <div class="social-icons">
-                    <a href="https://facebook.com" target="_blank" class="fab fa-github"></a>
-                    <a href="https://linkedin.com" target="_blank" class="fab fa-linkedin"></a>
-                </div>
-                <br>
-                <button class="download">Download <br> My CV</button>
             </div>
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bxl-instagram' style='color:#ffffff' ></i></a>
+                <a href="#"><i class='bx bxl-github'></i></a>
+            </div>
+            <button class="more">View More</button>
+            <div class="scroll-indicator" id="scrollIndicator">
+                <div class="arrow"></div>
+            </div>
+
         </section>
 
         <!--RightSide-->
@@ -89,116 +68,203 @@
         </section>
     </section>
 
-    <section>
-        <h2 class="sectiontitle">Projects</h2>
 
-        <section class="projects">
-
-
-        <div class="project-card">
-            <img src="assets/images/caspar-camille-rubin-fPkvU7RDmCo-unsplash.jpg">
-            <h4>Saman Tyre House Project</h4>
-            <p>I Completed StandAlone Application for Saman Tyre House Using java and mysql.</p>
-        </div>
-
-        <div class="project-card">
-            <img src="assets/images/rami-al-zayat-w33-zg-dNL4-unsplash.jpg">
-            <h4>DP Communication Project</h4>
-            <p>I Completed StandAlone Application for Dp Communication Using java and mysql.</p>
-        </div>
-        <div class="project-card">
-            <img src="assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg">
-            <h4>Manathunga Tours Project</h4>
-            <p>I Completed StandAlone Application for Manathunga Tours Using java and mysql.This is My First Semester Final Project.</p>
-        </div>
-        
-    </section>
-    </section>
-
-
-<section>
-    <h2 class="sectiontitle">Skills & Education</h2>
-    <section class="skills">
-        <div>
-            <h4>School Studies</h4>
-            <img src="assets/images/school.jpeg">
-            Completed Advanced Level Exam At St.Aloysius College  - 2021
-        </div>
-        <div>
-            <h4>Higher Studies</h4>
-            <img src="assets/images/higher.jpeg">
-            Following GDSE Programme At IJSE  - 2023 Present
-        </div>
-        <div>
-            <img src="assets/images/Download%20Coolorful%20pie%20chart%20infographics%20template%20for%20free.jpeg\">
-
-        </div>
-
-    </section>
-</section>
-
-    <section>
-        <h2 class="sectiontitle">Gallery</h2>
-    <section class="gallery">
-        <div class="myimageg">
-            <img src="assets/images/gallery1.jpg">
-        </div>
-        <div class="myimageg">
-            <img src="assets/images/gallery2.jpg">
-        </div >
-        <div class="myimageg">
-            <img src="assets/images/gallery3.jpg">
-        </div>
-    </section>
-    </section>
-
-    <section class="contactsection">
-    <section class="contact">
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first_name" placeholder="Enter your first name" required>
+    <!-- About Section-->
+<!--
+    <section class="about">
+        <div class="about-section">
+            <h2>About Me</h2>
+            <div class="line-container">
+                <div class="short-line"></div>
+                <div class="long-line"></div>
             </div>
-            <div class="form-group">
-                <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last_name" placeholder="Enter your last name" required>
+        </div>
+        <h3>I AM </h3>
+        <h2 class="rotating-text">
+            <span class="text-item">Full Stack Developer</span>
+            <span class="text-item">Creative Web Developer</span>
+            <span class="text-item">UI/UX Designer</span>
+            <span class="text-item">YouTuber</span>
+        </h2>
+
+
+        <div class="personal-info">
+                    <div class="info-item">
+                        <p>Full Name : <span>Mahesh Hansaka</span></p>
+                    </div>
+                    <div class="info-item">
+                        <p>Birth Day : <span>05 October 2002</span></p>
+                    </div>
+                    <div class="info-item">
+                        <p>Age : <span>22</span></p>
+                    </div>
+                    <div class="info-item">
+                        <p>Region : <span>Sri Lanka</span></p>
+                    </div>
+                    <div class="info-item">
+                        <p>Email : <span>maheshhansaka628@gmail.com</span></p>
+                    </div>
+                    <div class="info-item">
+                        <p>Tel : <span>+9471 0356244</span></p>
+                    </div>
+        </div>
+
+
+    </section>-->
+
+    <section class="about">
+        <div class="about-section">
+            <div class="line-container">
+                <div class="long-line"></div>
+                <h2>About Me</h2>
+                <div class="long-line"></div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="mobile-number">Mobile Number</label>
-                <input type="tel" id="mobile-number" name="mobile_number" placeholder="Enter your mobile number" required>
-            </div>
-            <br>
-            <button type="submit" class="contactme">Contact Me</button>
-        </form>
-    </section>
-    </section>
-<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-    <section class="projects">
-        <h2>Projetos</h2>
-        <div class="carousel">
-            <button class="carousel-control prev" onclick="prevSlide()">&#8592;</button>
-            <div class="card-container">
-                <div class="card">
-                    <img src="user-register.png" alt="User Register">
-                    <h3>User Register</h3>
-                    <p>Aplicação desenvolvida para demonstrar conceitos básicos como CRUD, autenticação, e rate limit.</p>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Left side: Personal Info -->
+            <div class="left-side">
+                <div class="personal-info">
+                    <div class="info-item">
+                        <p>Full Name : <span>Mahesh Hansaka</span></p>
+                    </div>
+                    <div class="info-item">
+                        <p>Birth Day : <span>05 October 2002</span></p>
+                    </div>
+                    <div class="info-item">
+                        <p>Age : <span>22</span></p>
+                    </div>
+                    <div class="info-item">
+                        <p>Region : <span>Sri Lanka</span></p>
+                    </div>
+                    <div class="info-item">
+                        <p>Email : <span>maheshhansaka628@gmail.com</span></p>
+                    </div>
+                    <div class="info-item">
+                        <p>Tel : <span>+94 71 0356244</span></p>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="country-list.png" alt="Country List">
-                    <h3>Country List</h3>
-                    <p>Lista de clientes com países do mundo e detalhes de cada um.</p>
-                </div>
-                <!-- Add more cards as needed -->
             </div>
-            <button class="carousel-control next" onclick="nextSlide()">&#8594;</button>
+
+            <!-- Right side: Rotating text and "I AM" -->
+            <div class="right-side">
+                <h3>I AM</h3>
+                <h2 class="rotating-text">
+                    <span class="text-item">Full Stack Developer</span>
+                    <span class="text-item">Creative Web Developer</span>
+                    <span class="text-item">UI/UX Designer</span>
+                    <span class="text-item">YouTuber</span>
+                </h2>
+            </div>
+            <p></p>
         </div>
     </section>
 
-<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+    <!--Skills And Education-->
+    <div class="projects">
+        <div class="line-container">
+            <div class="long-line"></div>
+            <h2>Skills & Education</h2>
+            <div class="long-line"></div>
+        </div>
+    </div>
+    <div class="education-container">
+        <h1>My Educational Journey</h1>
+        <div class="timeline">
+            <div class="container left">
+                <div class="content">
+                    <h2>Master of Science in Computer Science</h2>
+                    <p class="date">2020 - 2022</p>
+                    <p class="institution">University of Technology</p>
+                    <p class="description">Specialized in Artificial Intelligence and Machine Learning. Completed a thesis on "Deep Learning Applications in Natural Language Processing".</p>
+                </div>
+            </div>
+            <div class="container right">
+                <div class="content">
+                    <h2>Bachelor of Science in Software Engineering</h2>
+                    <p class="date">2016 - 2020</p>
+                    <p class="institution">State University</p>
+                    <p class="description">Minor in Data Science. Participated in multiple hackathons and developed an award-winning project on predictive analytics.</p>
+                </div>
+            </div>
+            <div class="container left">
+                <div class="content">
+                    <h2>High School Diploma</h2>
+                    <p class="date">2012 - 2016</p>
+                    <p class="institution">Central High School</p>
+                    <p class="description">Graduated with honors. President of the Computer Science Club and led the school's robotics team to state finals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--Projects-->
+
+        <div class="projects">
+            <div class="line-container">
+                <div class="long-line"></div>
+                <h2>My Projects</h2>
+                <div class="long-line"></div>
+            </div>
+        </div>
+    <section class="row">
+        <div class="nine columns">
+            <div class="coverflow top10 bot10">
+                <a class="prev-arrow"></a>
+                <a href=""><img src="assets/images/nasa-Q1p7bh3SHj8-unsplash.jpg" class="coverflow__image" /></a>
+                <a href=""><img src="assets/images/rami-al-zayat-w33-zg-dNL4-unsplash.jpg" class="coverflow__image" /></a>
+                <a href=""><img src="assets/images/fabio-oyXis2kALVg-unsplash.jpg" class="coverflow__image" /></a>
+                <!--<a href=""><img src="http://placehold.it/400x400.jpg" class="coverflow__image" /></a>
+                <a href=""><img src="http://placehold.it/400x400.jpg" class="coverflow__image" /></a>-->
+                <a class="next-arrow"></a>
+            </div>
+        </div>
+    </section>
+
+    <!--Assignments-->
+    <div class="projects">
+        <div class="line-container">
+            <div class="long-line"></div>
+            <h2>Assignments</h2>
+            <div class="long-line"></div>
+        </div>
+    </div>
+
+    <!--Gallery-->
+    <div class="projects">
+        <div class="line-container">
+            <div class="long-line"></div>
+            <h2>Gallery</h2>
+            <div class="long-line"></div>
+        </div>
+    </div>
+    <section class="row">
+        <div class="nine columns">
+            <div class="coverflow top10 bot10">
+                <a class="prev-arrow"></a>
+                <a href=""><img src="assets/images/gallery1.jpg" class="coverflow__image" /></a>
+                <a href=""><img src="assets/images/gallery2.jpg" class="coverflow__image" /></a>
+                <a href=""><img src="assets/images/gallery3.jpg" class="coverflow__image" /></a>
+                <!--<a href=""><img src="http://placehold.it/400x400.jpg" class="coverflow__image" /></a>
+                <a href=""><img src="http://placehold.it/400x400.jpg" class="coverflow__image" /></a>-->
+                <a class="next-arrow"></a>
+            </div>
+        </div>
+    </section>
+
+    <!--Contact Me-->
+    <div class="projects">
+        <div class="line-container">
+            <div class="long-line"></div>
+            <h2>Contact Me</h2>
+            <div class="long-line"></div>
+        </div>
+    </div>
+
 <footer>
     <h4>Mahesh Hansaka</h4>
     <div class="footer-data">
@@ -210,7 +276,7 @@
         Student at IJSE
     </div>
 </footer>
-            <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
 </html>
