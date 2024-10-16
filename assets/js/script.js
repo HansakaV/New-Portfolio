@@ -180,3 +180,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         observer.observe(container);
     });
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log('Form submitted');
+        console.log('Name:', form.name.value);
+        console.log('Email:', form.email.value);
+        console.log('Message:', form.message.value);
+        alert('Thank you for your message! I will get back to you soon.');
+        form.reset();
+    });
+});
+document.addEventListener('DOMContentLoaded', (event) => {
+    const skillBars = document.querySelectorAll('.skill-percentage');
+    skillBars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+            bar.style.width = width;
+        }, 500);
+    });
+});
