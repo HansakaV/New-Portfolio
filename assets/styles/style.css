@@ -50,6 +50,17 @@ body {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    position: relative;
+    overflow: hidden;
+}
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Send video to the background */
 }
 .leftside{
     padding: 85px 5% 0 ;
@@ -1732,4 +1743,23 @@ h4 {
 
 .view-more:hover {
     background-color: #45a049;
+}
+
+/*Assignment Section*/
+
+.assignments{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background-color: transparent;
+}
+.assignment{
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    height: 200px;
 }
