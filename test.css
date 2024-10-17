@@ -10,6 +10,7 @@
     --color-glass: linear-gradient(to left, #142544, #1a9092);
     --color-water: linear-gradient(to left, #142544, #1b6d6e);
 }
+/*
 body {
     background-image: var(--color-bg);
     min-height: 100vh;
@@ -34,6 +35,8 @@ h1 {
     top: 60%;
     animation: word-animation 2s ease-in-out forwards;
 }
+*/
+/*
 .rain {
     height: 0.5rem;
     width: 0.15rem;
@@ -44,6 +47,7 @@ h1 {
     z-index: 2;
     animation: rain-drop 1s linear forwards;
 }
+*/
 
 @keyframes rain-drop {
     from {
