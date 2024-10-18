@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+/*
 let scene, camera, renderer, particleSystem;
 
 function init() {
@@ -264,4 +265,4 @@ function animate() {
 }
 
 init();
-animate();
+animate();*/

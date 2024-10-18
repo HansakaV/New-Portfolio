@@ -7,21 +7,8 @@ body {
     */
     font-family: 'Inter',sans-serif;
     background-color: #211936;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-}
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Send it behind all other elements */
-}
-.content {
-    position: relative;
-    z-index: 1; /* Bring content in front of canvas */
+
+
 }
 
 .header {
@@ -33,6 +20,7 @@ canvas {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: -1;
 }
 
 .logo span {
@@ -1808,11 +1796,12 @@ h4 {
 
 .assignments{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
     padding: 2rem;
     background-color: transparent;
 }
+
 .assignment{
     background-color: #313344;
     border-radius: 10px;
@@ -1820,11 +1809,41 @@ h4 {
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     position: relative;
-    height: 200px;
-    border-image: linear-gradient(45deg, rgba(255, 99, 71, 1), rgba(0, 128, 128, 1), rgba(123, 104, 238, 1)) 1;
+    height: 400px;
+    text-shadow: 0 1px 0 #000;
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(
+            from var(--border-angle),
+            #213,
+            #112 5%,
+            #112 60%,
+            #213 95%
+    );
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+    background: var(--main-bg) padding-box,var(--gradient-border) border-box, var(--main-bg) border-box;
+    background-position: center center;
+    animation: bg-spin 3s linear infinite;
+    @keyframes bg-spin {
+        to {
+            --border-angle: 1turn;
+        }
+    }
 
-
+    &:hover {
+        animation-play-state: paused;
+    }
 }
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+
+
 .assignment>h2{
     margin-top: 0.5rem;
     color: #25D162;
@@ -1835,10 +1854,189 @@ h4 {
 }
 .github{
     position: absolute;
-    top: 60%;
-    left: 50%;
+    top: 90%;
+    left: 30%;
     transform: translate(-50%, -50%);
     align-items: center;
     justify-content: center;
+}
+.github-2{
+    position: absolute;
+    top: 90%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: #ff7153;
+    align-items: center;
+    justify-content: center;
 
+}
+.assignment-image{
+    width: 250px;
+    height: 270px;
+    position: absolute;
+    left: 70px;
+    bottom: 70px;
+}
+.assignment-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*Media Queries*/
+.header {
+    padding: 20px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.heromain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftside {
+    flex: 1;
+}
+
+.circle-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.myImage {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+/* 1440px */
+@media (max-width: 1440px) {
+    .header {
+        padding: 15px;
+    }
+
+    .myImage {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+    .navbar .nav-links {
+        gap: 20px;
+    }
+
+    .heromain {
+        flex-direction: column;
+    }
+
+    .myImage {
+        width: 280px;
+        height: 280px;
+    }
+
+    .leftside h1 {
+        font-size: 2.5rem;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+    }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .myImage {
+        width: 240px;
+        height: 240px;
+    }
+
+    .leftside h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+}
+
+/* 475px */
+@media (max-width: 475px) {
+    .navbar {
+        display: none; /* Consider using a burger menu here */
+    }
+
+    .myImage {
+        width: 200px;
+        height: 200px;
+    }
+
+    .leftside h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .scroll-indicator {
+        display: none; /* Can hide this on smaller screens */
+    }
+}
+
+/* 420px */
+@media (max-width: 420px) {
+    .myImage {
+        width: 180px;
+        height: 180px;
+    }
+
+    .leftside h1 {
+        font-size: 1.6rem;
+    }
+
+    .social-icons a {
+        font-size: 1.4rem;
+    }
+
+    .hero {
+        padding: 20px 10px;
+    }
+}
+
+/* 325px */
+@media (max-width: 325px) {
+    .myImage {
+        width: 160px;
+        height: 160px;
+    }
+
+    .leftside h1 {
+        font-size: 1.4rem;
+    }
+
+    .social-icons a {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        padding: 10px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
 }
