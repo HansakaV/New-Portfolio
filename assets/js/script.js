@@ -204,35 +204,64 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-/*Flower*/
-document.addEventListener("DOMContentLoaded", () => {
-    const flower = document.querySelector("#animation-flower");
-    const word = document.querySelector("h1");
-    const rainDrop = document.querySelector(".rain-drop");
+let scene, camera, renderer, particleSystem;
 
-    setTimeout(() => {
-        flower.style.display = "inherit";
-        word.style.display = "none";
-    }, 2000);
-});
+function init() {
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 40;
 
-function createRaindrop() {
-    const body = document.querySelector("body");
-    const xPosition = Math.random() * window.innerWidth;
-    const delay = Math.random() * 5;
-    const duration = Math.random() * 2 + 2;
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
 
-    const rainDrop = document.createElement("div");
-    rainDrop.className = "rain";
-    rainDrop.style.left = `${xPosition}px`;
-    rainDrop.style.animationDelay = `${delay}s`;
-    rainDrop.style.animationDuration = `${duration}s`;
-    rainDrop.style.display = "none";
-    body.appendChild(rainDrop);
+    // Particles setup
+    const particleCount = 5000;
+    const particlesGeometry = new THREE.BufferGeometry();
+    const positions = [];
+    const colors = [];
 
-    setTimeout(() => {
-        rainDrop.style.display = "inherit";
-    }, 800);
+    for (let i = 0; i < particleCount; i++) {
+        const x = (Math.random() - 0.5) * 100;
+        const y = (Math.random() - 0.5) * 100;
+        const z = (Math.random() - 0.5) * 100;
+
+        positions.push(x, y, z);
+
+        colors.push(Math.random(), Math.random(), Math.random());
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    particlesGeometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+    const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.2,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.8
+    });
+
+    particleSystem = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particleSystem);
+
+    // Event listener for window resizing
+    window.addEventListener('resize', onWindowResize, false);
 }
 
-setInterval(createRaindrop, 100);
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+
+    particleSystem.rotation.x += 0.001;
+    particleSystem.rotation.y += 0.002;
+
+    renderer.render(scene, camera);
+}
+
+init();
+animate();
