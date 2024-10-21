@@ -204,6 +204,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
 /*
 let scene, camera, renderer, particleSystem;
 
