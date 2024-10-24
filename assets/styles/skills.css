@@ -1,0 +1,161 @@
+.skills-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+.skill {
+    margin-bottom: 20px;
+}
+.skill-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.skill-bar {
+    background-color: #ecf0f1;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.skill-percentage {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    background-color: #3498db;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+    padding-right: 10px;
+    color: white;
+    font-size: 12px;
+}
+/*Education*/
+
+.education-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+h1 {
+    text-align: center;
+}
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #3498db;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #3498db;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.left {
+    left: 0;
+}
+.right {
+    left: 50%;
+}
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #3498db;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #3498db;
+}
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #3498db;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #3498db transparent transparent;
+}
+.right::after {
+    left: -16px;
+}
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+.content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.date {
+    font-weight: bold;
+    color: #3498db;
+}
+.institution {
+    font-style: italic;
+    color: #7f8c8d;
+}
+.description {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    .container::before {
+        left: 60px;
+        border: medium solid #3498db;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #3498db transparent transparent;
+    }
+    .left::after, .right::after {
+        left: 15px;
+    }
+    .right {
+        left: 0%;
+    }
+}
+

@@ -1,0 +1,88 @@
+.assignments{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+    background-color: transparent;
+}
+
+.assignment{
+    background-color: #313344;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    height: 400px;
+    text-shadow: 0 1px 0 #000;
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(
+            from var(--border-angle),
+            #213,
+            #112 5%,
+            #112 60%,
+            #213 95%
+    );
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+    background: var(--main-bg) padding-box,var(--gradient-border) border-box, var(--main-bg) border-box;
+    background-position: center center;
+    animation: bg-spin 3s linear infinite;
+    @keyframes bg-spin {
+        to {
+            --border-angle: 1turn;
+        }
+    }
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+
+
+.assignment>h2{
+    margin-top: 0.5rem;
+    color: #25D162;
+    font-size: 32px;
+    font-weight: 700;
+    text-shadow: #00FFFF;
+    text-align: center;
+}
+.github{
+    position: absolute;
+    top: 90%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+}
+.github-2{
+    position: absolute;
+    top: 90%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: #ff7153;
+    align-items: center;
+    justify-content: center;
+
+}
+.assignment-image{
+    width: 250px;
+    height: 270px;
+    position: absolute;
+    left: 70px;
+    bottom: 70px;
+}
+.assignment-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
