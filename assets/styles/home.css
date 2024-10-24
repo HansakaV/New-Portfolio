@@ -246,6 +246,35 @@ body {
     padding: 0 5% 0;
 }
 
+/* Large devices (desktops) - No media query needed as this is the default */
+
+/* Medium devices (tablets and smaller desktops) */
+@media (max-width: 1024px) {
+    .heromain {
+        padding: 15px;
+        grid-gap: 20px;
+    }
+
+    .home-content > h1 {
+        font-size: 48px;
+    }
+
+    .home-content > h3 {
+        font-size: 28px;
+    }
+
+    .circle-container > div {
+        width: 400px;
+        height: 60vh;
+    }
+
+    .circle-container > div > img {
+        width: 400px;
+        height: 60vh;
+    }
+}
+
+/* Small devices (landscape tablets, smaller laptops) */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -254,19 +283,104 @@ body {
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: #f8f8f8;
+        background-color: rgba(33, 25, 54, 0.95); /* Matching your dark theme */
         padding: 20px;
+        z-index: 1000;
     }
+
     .nav-links.active {
         display: flex;
     }
+
     .nav-links li {
         margin: 10px 0;
     }
+
     .hamburger {
         display: flex;
     }
+
+    .hamburger span {
+        background-color: #00eeff; /* Matching your theme color */
+    }
+
+    .heromain {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .leftside {
+        padding: 40px 5% 0;
+    }
+
+    .home-content > h1 {
+        font-size: 40px;
+    }
+
+    .home-content > h3 {
+        font-size: 24px;
+    }
+
+    .home-content > p {
+        font-size: 18px;
+    }
+
+    .circle-container > div {
+        width: 300px;
+        height: 300px;
+        margin: 20px auto;
+    }
+
+    .circle-container > div > img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .social-icons > a {
+        margin: 20px 10px;
+    }
 }
+
+/* Extra small devices (phones) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+        padding: 0 10px;
+    }
+
+    .home-content > h1 {
+        font-size: 32px;
+    }
+
+    .home-content > h3 {
+        font-size: 20px;
+    }
+
+    .home-content > p {
+        font-size: 16px;
+    }
+
+    .circle-container > div {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle-container > div > img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .typewriter-text {
+        font-size: 28px;
+    }
+
+    .more {
+        width: 80px;
+        height: 50px;
+    }
+}
+
+/* Very small devices */
 @media (max-width: 325px) {
     .logo {
         font-size: 20px;
