@@ -268,37 +268,25 @@ body {
     }
 }
 @media (max-width: 325px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #f8f8f8;
-        padding: 20px;
+    .logo {
+        font-size: 20px;
+        padding: 0 5px;
     }
-    .heromain{
-        padding: 20px;
-        width: 100vw;
-        box-sizing: border-box;
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
-        position: relative;
-        overflow: hidden;
-    }
-    .logo{
-        font-size: 22px;
-        font-weight: 700;
-        padding: 0 5px 0;
-    }
-    .circle-container>div {
+
+    .circle-container > div {
         width: 160px;
         height: 160px;
+        margin: 10px auto;
     }
-    .circle-container>div>img {
+
+    .circle-container > div > img {
         width: 160px;
         height: 160px;
     }
 
+    .social-icons > a {
+        width: 35px;
+        height: 35px;
+        margin: 15px 8px;
+    }
 }
