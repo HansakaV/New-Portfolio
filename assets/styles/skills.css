@@ -159,3 +159,177 @@ h1 {
     }
 }
 
+/*Media Queries*/
+/* 1024px - Tablets in landscape & smaller laptops */
+@media screen and (max-width: 1024px) {
+    .skills-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .education-container {
+        max-width: 90%;
+    }
+
+    .timeline {
+        margin: 0 20px;
+    }
+
+    .content {
+        padding: 15px 20px;
+    }
+}
+
+/* 768px - Tablets in portrait */
+@media screen and (max-width: 768px) {
+    .skills-container {
+        padding: 15px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 1.5em;
+    }
+
+    .skill-bar {
+        height: 18px;
+    }
+
+    .skill-percentage {
+        font-size: 11px;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .container::before {
+        left: 60px;
+        border: medium solid #3498db;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #3498db transparent transparent;
+    }
+
+    .left::after, .right::after {
+        left: 15px;
+    }
+
+    .right {
+        left: 0%;
+    }
+
+    .content {
+        padding: 15px;
+    }
+}
+
+/* 480px - Mobile landscape */
+@media screen and (max-width: 480px) {
+    .skills-container {
+        padding: 10px;
+        margin: 0 10px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+
+    .skill-name {
+        font-size: 0.9em;
+    }
+
+    .skill-bar {
+        height: 16px;
+    }
+
+    .skill-percentage {
+        font-size: 10px;
+        padding-right: 5px;
+    }
+
+    .container {
+        padding-left: 60px;
+        padding-right: 15px;
+    }
+
+    .content {
+        padding: 12px;
+    }
+
+    .date {
+        font-size: 0.9em;
+    }
+
+    .institution {
+        font-size: 0.85em;
+    }
+
+    .description {
+        font-size: 0.8em;
+    }
+}
+
+/* 325px - Small mobile devices */
+@media screen and (max-width: 325px) {
+    .skills-container {
+        padding: 8px;
+        margin: 0 5px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        margin-bottom: 12px;
+    }
+
+    .skill {
+        margin-bottom: 15px;
+    }
+
+    .skill-name {
+        font-size: 0.85em;
+    }
+
+    .skill-bar {
+        height: 14px;
+    }
+
+    .skill-percentage {
+        font-size: 9px;
+        padding-right: 3px;
+    }
+
+    .container {
+        padding-left: 50px;
+        padding-right: 10px;
+    }
+
+    .container::after {
+        width: 20px;
+        height: 20px;
+        right: -14px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .date {
+        font-size: 0.85em;
+    }
+
+    .institution {
+        font-size: 0.8em;
+    }
+
+    .description {
+        font-size: 0.75em;
+        margin-top: 8px;
+    }
+}
