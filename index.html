@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="assets/styles/projects.css">
     <link rel="stylesheet" href="assets/styles/assignments.css">
     <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="assets/styles/load.css">
+
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
@@ -22,6 +24,30 @@
     <title>Portfolio</title>
 </head>
 <body>
+<!--Loading-->
+<div class="loader-container">
+    <div class="artistic-loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <!-- Particles -->
+        <script>
+            // Create particles dynamically
+            const loader = document.querySelector('.artistic-loader');
+            for (let i = 0; i < 12; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = '50%';
+                particle.style.top = '50%';
+                particle.style.transform = `rotate(${i * 30}deg)`;
+                particle.style.animationDelay = `${i * 0.1}s`;
+                loader.appendChild(particle);
+            }
+        </script>
+        <div class="loading-text">LOADING</div>
+    </div>
+</div>
+<div class="main-content">
 <!--header-->
 <header class="header">
     <nav class="navbar">
@@ -387,6 +413,7 @@
             </div>
         </div>
     </footer>
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="assets/js/script.js"></script>
 

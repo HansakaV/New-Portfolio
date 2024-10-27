@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.8s ease-out;
+        }
+
+        .artistic-loader {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            animation: rotate var(--duration) infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            border-top-color: #FF6B6B;
+            --duration: 2s;
+        }
+
+        .circle:nth-child(2) {
+            width: 80%;
+            height: 80%;
+            margin: 10%;
+            border-right-color: #4ECDC4;
+            animation-delay: 0.2s;
+            --duration: 1.8s;
+        }
+
+        .circle:nth-child(3) {
+            width: 60%;
+            height: 60%;
+            margin: 20%;
+            border-bottom-color: #FFE66D;
+            animation-delay: 0.4s;
+            --duration: 1.6s;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: white;
+            animation: particles 1.5s infinite ease-out;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes particles {
+            0% {
+                transform: scale(0) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) translate(100px, 100px);
+                opacity: 0;
+            }
+        }
+
+        .main-content {
+            opacity: 0;
+            transition: opacity 0.8s ease-in;
+            min-height: 100vh;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .fade-in {
+            opacity: 1;
+        }
+
+        /* Text effect */
+        .loading-text {
+            position: absolute;
+            bottom: -60px;
+            width: 100%;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            font-size: 18px;
+            letter-spacing: 4px;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4ECDC4;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4ECDC4;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Loading Screen -->
+<div class="loader-container">
+    <div class="artistic-loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <!-- Particles -->
+        <script>
+            // Create particles dynamically
+            const loader = document.querySelector('.artistic-loader');
+            for (let i = 0; i < 12; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = '50%';
+                particle.style.top = '50%';
+                particle.style.transform = `rotate(${i * 30}deg)`;
+                particle.style.animationDelay = `${i * 0.1}s`;
+                loader.appendChild(particle);
+            }
+        </script>
+        <div class="loading-text">LOADING</div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h1>Your Portfolio Content</h1>
+    <!-- Rest of your portfolio content goes here -->
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loader = document.querySelector('.loader-container');
+        const mainContent = document.querySelector('.main-content');
+
+        // Simulate loading time
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            mainContent.classList.add('fade-in');
+        }, 3000);
+    });
+</script>
+</body>
+</html>

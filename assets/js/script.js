@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const text = "Welcome to My portfolio.";
     const typewriterText = document.querySelector(".typewriter-text");
 
@@ -60,6 +60,7 @@ function forScale(coverflowPos) {
         }
     }
 }
+
 //end added by Chase
 
 function setupCoverflow(coverflowContainer) {
@@ -75,7 +76,7 @@ function setupCoverflow(coverflowContainer) {
         coverflowContainers = Array.prototype.slice.apply(document.getElementsByClassName('coverflow'));
     }
 
-    coverflowContainers.forEach(function(containerElement) {
+    coverflowContainers.forEach(function (containerElement) {
         var coverflow = {};
         var prevArrows, nextArrows, autoSlideInterval;
 
@@ -85,7 +86,7 @@ function setupCoverflow(coverflowContainer) {
         coverflow.position = Math.floor(coverflow.images.length / 2) + 1;
 
         //set indicies on images
-        coverflow.images.forEach(function(coverflowImage, i) {
+        coverflow.images.forEach(function (coverflowImage, i) {
             coverflowImage.dataset.coverflowIndex = i + 1;
         });
 
@@ -112,7 +113,7 @@ function setupCoverflow(coverflowContainer) {
         function jumpToImage(evt) {
             coverflow.position = Math.min(coverflow.images.length, Math.max(1, evt.target.dataset.coverflowIndex));
             coverflow.container.dataset.coverflowPosition = coverflow.position;
-            setTimeout(function() {
+            setTimeout(function () {
                 forScale(coverflow.position);
             }, 1);
         }
@@ -130,7 +131,7 @@ function setupCoverflow(coverflowContainer) {
 
         // Auto slide functionality
         function autoSlide() {
-            autoSlideInterval = setInterval(function() {
+            autoSlideInterval = setInterval(function () {
                 if (coverflow.position === coverflow.images.length) {
                     coverflow.position = 1;
                 } else {
@@ -141,13 +142,13 @@ function setupCoverflow(coverflowContainer) {
             }, 3000); // Change image every 3 seconds
         }
 
-        prevArrows.forEach(function(prevArrow) {
+        prevArrows.forEach(function (prevArrow) {
             prevArrow.addEventListener('click', setPrevImage);
         });
-        nextArrows.forEach(function(nextArrow) {
+        nextArrows.forEach(function (nextArrow) {
             nextArrow.addEventListener('click', setNextImage);
         });
-        coverflow.images.forEach(function(image) {
+        coverflow.images.forEach(function (image) {
             image.addEventListener('click', jumpToImage);
         });
         window.addEventListener('keyup', onKeyPress);
@@ -183,7 +184,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const form = document.getElementById('contact-form');
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
         console.log('Form submitted');
         console.log('Name:', form.name.value);
@@ -215,7 +216,7 @@ hamburger.addEventListener('click', () => {
 // Set up scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('three-container').appendChild(renderer.domElement);
@@ -225,7 +226,7 @@ const particlesGeometry = new THREE.BufferGeometry();
 const particlesCount = 1500;
 
 const posArray = new Float32Array(particlesCount * 3);
-for(let i = 0; i < particlesCount * 3; i++) {
+for (let i = 0; i < particlesCount * 3; i++) {
     posArray[i] = (Math.random() - 0.5) * 8;
 }
 
@@ -304,4 +305,17 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in-section').forEach(element => {
     observer.observe(element);
+});
+
+/*loading screen*/
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const loader = document.querySelector('.loader-container');
+    const mainContent = document.querySelector('.main-content');
+
+    // Simulate loading time
+    setTimeout(() => {
+    loader.classList.add('hidden');
+    mainContent.classList.add('fade-in');
+}, 3000);
 });

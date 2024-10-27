@@ -1,104 +1,110 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            padding: 20px;
-            background-color: #f8f8f8;
-        }
-        .navbar {
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease-out;
         }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
+
+        .loader {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            perspective: 800px;
         }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: rotate 4s infinite linear;
         }
-        .nav-links li {
-            margin-left: 20px;
+
+        .cube div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #fff;
+            opacity: 0.8;
         }
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
+
+        .front { transform: translateZ(50px); background: rgba(255, 82, 82, 0.3); }
+        .back { transform: translateZ(-50px) rotateY(180deg); background: rgba(130, 82, 255, 0.3); }
+        .right { transform: rotateY(90deg) translateZ(50px); background: rgba(82, 255, 180, 0.3); }
+        .left { transform: rotateY(-90deg) translateZ(50px); background: rgba(255, 198, 82, 0.3); }
+        .top { transform: rotateX(90deg) translateZ(50px); background: rgba(82, 191, 255, 0.3); }
+        .bottom { transform: rotateX(-90deg) translateZ(50px); background: rgba(255, 82, 203, 0.3); }
+
+        @keyframes rotate {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
         }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
+
+        .main-content {
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+            min-height: 100vh;
+            background: #fff;
+            padding: 20px;
         }
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            margin: 2px 0;
+
+        .fade-in {
+            opacity: 1;
         }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background-color: #f8f8f8;
-                padding: 20px;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .nav-links li {
-                margin: 10px 0;
-            }
-            .hamburger {
-                display: flex;
-            }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
-<header class="header">
-    <nav class="navbar">
-        <div class="logo">
-            Portfolio.
+<!-- Loading Screen -->
+<div class="loader-container">
+    <div class="loader">
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills & Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#assignments">Assignments</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-</header>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h1>Your Portfolio Content</h1>
+    <!-- Rest of your portfolio content goes here -->
+</div>
 
 <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    document.addEventListener('DOMContentLoaded', function() {
+        const loader = document.querySelector('.loader-container');
+        const mainContent = document.querySelector('.main-content');
 
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+        // Simulate loading time (you can remove this setTimeout in production)
+        setTimeout(() => {
+            // Hide loader
+            loader.classList.add('hidden');
+            // Show main content
+            mainContent.classList.add('fade-in');
+        }, 3000); // Loader will show for 3 seconds
     });
 </script>
 </body>
