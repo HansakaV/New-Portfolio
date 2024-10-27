@@ -3,169 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Portfolio</title>
     <style>
-        .loader-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1a1a1a;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .header {
+            height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            z-index: 1000;
-            transition: opacity 0.8s ease-out;
+            justify-content: center;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
         }
 
-        .artistic-loader {
-            position: relative;
-            width: 200px;
-            height: 200px;
+        .content-section {
+            padding: 100px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
         }
 
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            animation: rotate var(--duration) infinite ease-in-out;
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .circle:nth-child(1) {
-            width: 100%;
-            height: 100%;
-            border-top-color: #FF6B6B;
-            --duration: 2s;
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .circle:nth-child(2) {
-            width: 80%;
-            height: 80%;
-            margin: 10%;
-            border-right-color: #4ECDC4;
-            animation-delay: 0.2s;
-            --duration: 1.8s;
-        }
-
-        .circle:nth-child(3) {
-            width: 60%;
-            height: 60%;
-            margin: 20%;
-            border-bottom-color: #FFE66D;
-            animation-delay: 0.4s;
-            --duration: 1.6s;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
+        .project-card {
             background: white;
-            animation: particles 1.5s infinite ease-out;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes particles {
-            0% {
-                transform: scale(0) translate(0, 0);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1) translate(100px, 100px);
-                opacity: 0;
-            }
-        }
-
-        .main-content {
-            opacity: 0;
-            transition: opacity 0.8s ease-in;
-            min-height: 100vh;
-            background: #fff;
             padding: 20px;
-        }
-
-        .hidden {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: scale(0.9);
             opacity: 0;
-            pointer-events: none;
+            transition: all 0.5s ease;
         }
 
-        .fade-in {
+        .project-card.visible {
+            transform: scale(1);
             opacity: 1;
         }
 
-        /* Text effect */
-        .loading-text {
-            position: absolute;
-            bottom: -60px;
-            width: 100%;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            color: #fff;
-            font-size: 18px;
-            letter-spacing: 4px;
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
+        @keyframes fadeIn {
             from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4ECDC4;
+                opacity: 0;
             }
             to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4ECDC4;
+                opacity: 1;
+            }
+        }
+
+        .skills {
+            background: #f5f6fa;
+        }
+
+        .contact {
+            background: #2c3e50;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
             }
         }
     </style>
 </head>
 <body>
-<!-- Loading Screen -->
-<div class="loader-container">
-    <div class="artistic-loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <!-- Particles -->
-        <script>
-            // Create particles dynamically
-            const loader = document.querySelector('.artistic-loader');
-            for (let i = 0; i < 12; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = '50%';
-                particle.style.top = '50%';
-                particle.style.transform = `rotate(${i * 30}deg)`;
-                particle.style.animationDelay = `${i * 0.1}s`;
-                loader.appendChild(particle);
-            }
-        </script>
-        <div class="loading-text">LOADING</div>
+<header class="header">
+    <div>
+        <h1>John Doe</h1>
+        <p>Web Developer & Designer</p>
+        <div class="scroll-indicator">↓</div>
     </div>
-</div>
+</header>
 
-<!-- Main Content -->
-<div class="main-content">
-    <h1>Your Portfolio Content</h1>
-    <!-- Rest of your portfolio content goes here -->
-</div>
+<section class="content-section">
+    <div class="projects">
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>A beautiful web application built with modern technologies.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>An innovative solution for complex problems.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 3</h3>
+            <p>Creative design meets functionality.</p>
+        </div>
+    </div>
+</section>
+
+<section class="content-section skills">
+    <h2>Skills</h2>
+    <p>HTML, CSS, JavaScript, React, Node.js</p>
+</section>
+
+<section class="content-section contact">
+    <h2>Contact</h2>
+    <p>Get in touch: email@example.com</p>
+</section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const loader = document.querySelector('.loader-container');
-        const mainContent = document.querySelector('.main-content');
-
-        // Simulate loading time
+    // Initial load animation
+    document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
-            loader.classList.add('hidden');
-            mainContent.classList.add('fade-in');
-        }, 3000);
+            checkScroll();
+        }, 500);
     });
+
+    // Scroll animation
+    function checkScroll() {
+        const sections = document.querySelectorAll('.content-section');
+        const cards = document.querySelectorAll('.project-card');
+
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (sectionTop < windowHeight * 0.75) {
+                section.classList.add('visible');
+
+                // Animate project cards with delay if they're in this section
+                if (section.contains(cards[0])) {
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 200);
+                    });
+                }
+            }
+        });
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', checkScroll);
 </script>
 </body>
 </html>
