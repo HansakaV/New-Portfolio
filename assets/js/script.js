@@ -211,65 +211,97 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-/*
-let scene, camera, renderer, particleSystem;
+/*Animation*/
+// Set up scene
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
-function init() {
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 40;
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById('three-container').appendChild(renderer.domElement);
 
-    renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+// Create particles
+const particlesGeometry = new THREE.BufferGeometry();
+const particlesCount = 1500;
 
-    // Particles setup
-    const particleCount = 5000;
-    const particlesGeometry = new THREE.BufferGeometry();
-    const positions = [];
-    const colors = [];
-
-    for (let i = 0; i < particleCount; i++) {
-        const x = (Math.random() - 0.5) * 100;
-        const y = (Math.random() - 0.5) * 100;
-        const z = (Math.random() - 0.5) * 100;
-
-        positions.push(x, y, z);
-
-        colors.push(Math.random(), Math.random(), Math.random());
-    }
-
-    particlesGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-    particlesGeometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-
-    const particlesMaterial = new THREE.PointsMaterial({
-        size: 0.2,
-        vertexColors: true,
-        transparent: true,
-        opacity: 0.8
-    });
-
-    particleSystem = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particleSystem);
-
-    // Event listener for window resizing
-    window.addEventListener('resize', onWindowResize, false);
+const posArray = new Float32Array(particlesCount * 3);
+for(let i = 0; i < particlesCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 8;
 }
 
-function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-}
+particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
+// Create material
+const particlesMaterial = new THREE.PointsMaterial({
+    size: 0.005,
+    color: '#00eeff',
+    transparent: true,
+    opacity: 0.8,
+    blending: THREE.AdditiveBlending
+});
+
+// Create points
+const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(particlesMesh);
+
+// Position camera
+camera.position.z = 3;
+
+// Mouse movement effect
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener('mousemove', (event) => {
+    mouseX = event.clientX / window.innerWidth - 0.5;
+    mouseY = event.clientY / window.innerHeight - 0.5;
+});
+
+// Scroll effect
+let scrollY = 0;
+window.addEventListener('scroll', () => {
+    scrollY = window.scrollY;
+});
+
+// Animation loop
 function animate() {
     requestAnimationFrame(animate);
 
-    particleSystem.rotation.x += 0.001;
-    particleSystem.rotation.y += 0.002;
+    // Rotate particles
+    particlesMesh.rotation.y += 0.0005;
+    particlesMesh.rotation.x += 0.0002;
+
+    // Mouse movement effect
+    particlesMesh.rotation.y += mouseX * 0.05;
+    particlesMesh.rotation.x += mouseY * 0.05;
+
+    // Scroll effect
+    particlesMesh.position.y = scrollY * 0.0002;
 
     renderer.render(scene, camera);
 }
 
-init();
-animate();*/
+// Handle window resize
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+animate();
+
+// Add scroll animation
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in-section').forEach(element => {
+    observer.observe(element);
+});
