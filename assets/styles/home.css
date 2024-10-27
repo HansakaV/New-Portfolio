@@ -578,4 +578,8 @@ body {
     .circle-container > div {
         animation: floatAnimation 3s ease-in-out infinite;
     }
+    .typewriter-text{
+        font-size: 15px;
+        font-weight: 700;
+    }
 }
