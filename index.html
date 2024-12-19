@@ -15,13 +15,21 @@
     <link rel="stylesheet" href="assets/styles/projects.css">
     <link rel="stylesheet" href="assets/styles/assignments.css">
     <link rel="stylesheet" href="assets/styles/footer.css">
+<!--
     <link rel="stylesheet" href="assets/styles/load.css">
+-->
 
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
     <title>Portfolio</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+
+    </style>
 </head>
 <body>
 <!--Loading-->
@@ -57,9 +65,9 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About </a></li>
-            <li><a href="#skills">Skills & Education</a></li>
+            <li><a href="#education">Skills & Education</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#assignments">Assignments</a></li>
+            <li><a href="#assignment">Assignments</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -75,7 +83,7 @@
 
 <!--hero section-->
 <section class="hero">
-    <section class="heromain">
+    <section  id = "home" class="heromain">
         <video autoplay muted loop id="bg-video">
            <<source src="assets/videos/background-video.mp4">
         </video>
@@ -86,7 +94,7 @@
                 <h3 >Hello It's Me </h3>
                 <h1>Mahesh Hansaka</h1>
                 <div class="typewriter-container">
-                    <h1 class="typewriter-text"></h1>
+                    <h1 class="typewriter-text">WELCOME TO MY PORTFOLIO</h1>
                 </div>
             </div>
             <div class="social-icons">
@@ -114,7 +122,7 @@
     <!--About Section-->
     <div id="three-container"></div>
 
-    <div class="about">
+    <div id="about" class="about">
         <div class="left-side-paragraph">
             <p>I am a 22-year-old full-stack software engineer from Sri Lanka, currently pursuing my higher studies at the Institute of Software Engineering.<br> With a passion for both backend and frontend development, I bring a balance of creativity and technical expertise to every project. My goal is to build efficient, scalable solutions while continuously learning and growing in the software development field.</p>
         </div>
@@ -125,26 +133,7 @@
         </div>
     </div>
 
-  <!--  <div class="line-container">
-        <div class="long-line"></div>
-        <h2>About Me</h2>
-        <div class="long-line"></div>
-    </div>
-    <section class="about">
-        <section class="circle-container-about">
-            <div>
-                <img src="assets/images/about-images/about.jpg" alt="mypPhoto" class="myImage">
-            </div>
-        </section>
 
-        &lt;!&ndash; Left side: Personal Info &ndash;&gt;
-        <div class="left-side-paragraph">
-            <p>I am a 22-year-old full-stack software engineer from Sri Lanka, currently pursuing my higher studies at the Institute of Software Engineering.<br> With a passion for both backend and frontend development, I bring a balance of creativity and technical expertise to every project. My goal is to build efficient, scalable solutions while continuously learning and growing in the software development field.</p>
-
-        </div>
-        
-    </section>
--->
     <!--Skills And Education-->
     <div class="projects">
         <div class="line-container">
@@ -153,7 +142,7 @@
             <div class="long-line"></div>
         </div>
     </div>
-    <div class="education-container">
+    <div id = "education" class="education-container">
         <h1>My Educational Journey</h1>
         <div class="timeline">
             <div class="container left">
@@ -227,7 +216,7 @@
                 <div class="long-line"></div>
             </div>
         </div>
-    <section class="project-section">
+    <section  id="projects" class="project-section">
         <div class="card">
             <div class="project-content">
                 <h2>Connect Four Game Project</h2>
@@ -236,7 +225,8 @@
                     <img src="assets/images/project-images/rami-al-zayat-w33-zg-dNL4-unsplash.jpg">
                 </div>
             </div>
-            <button class="view-more">View More</button>
+            <a href="https://github.com/HansakaV/DP-Communication" class="github" target="_blank" >View More</a>
+
 
         </div>
         <div class="card">
@@ -247,7 +237,8 @@
 
                 </div>
             </div>
-            <button class="view-more">View More</button>
+            <a href="https://github.com/HansakaV/First-Sem-Final-Project" class="github" target="_blank" >View More</a>
+
         </div>
         <div class="card">
             <div class="project-content">
@@ -257,7 +248,8 @@
 
                 </div>
             </div>
-            <button class="view-more">View More</button>
+            <a href="https://github.com/HansakaV/DP-Communication" class="github" target="_blank" >View More</a>
+
         </div>
         <div class="card">
             <div class="project-content">
@@ -267,26 +259,32 @@
                     
                 </div>
             </div>
-            <button class="view-more">View More</button>
+            <a href="https://github.com/HansakaV/DP-Communication" class="github" target="_blank" >View More</a>
+
         </div>
     </section>
 
+
+
+
+
     <!--Assignments-->
-    <div class="projects">
+   <div class="projects">
         <div class="line-container">
             <div class="long-line"></div>
             <h2>Assignments</h2>
             <div class="long-line"></div>
         </div>
     </div>
-    <section class="assignments">
+    <section  id="assignment" class="assignments">
         <div class="assignment">
             <h2>Assignment 1</h2>
             <div class="assignment-image">
                 <img src="assets/images/assignment-images/home-office-5037562_1280.jpg">
             </div>
-            <button class="github">Code</button>
-            <button class="github-2">Run</button>
+
+            <a href="https://github.com/HansakaV/New-Portfolio" class="github" target="_blank" >Code</a>
+            <a href="page/assgnment/assignment3-cases/Case2.html" class="github-2">Run</a>
 
         </div>
         <div class="assignment">
@@ -294,8 +292,9 @@
             <div class="assignment-image">
                 <img src="assets/images/assignment-images/home-office-5037562_1280.jpg">
             </div>
-            <button class="github">Code</button>
-            <button class="github-2">Run</button>
+            <a href="https://github.com/HansakaV/New-Portfolio" class="github" target="_blank" >Code</a>
+            <a href="page/assgnment/assignment3-cases/Case3.html" class="github-2">Run</a>
+
 
         </div>
         <div class="assignment">
@@ -303,36 +302,42 @@
             <div class="assignment-image">
                 <img src="assets/images/assignment-images/home-office-5037562_1280.jpg">
             </div>
-            <button class="github">Code</button>
-            <button class="github-2">Run</button>
+            <a href="https://github.com/HansakaV/New-Portfolio" class="github" target="_blank" >Code</a>
+            <a href="page/assgnment/assignment3-cases/Case4.html" class="github-2">Run</a>
+
         </div>
         <div class="assignment">
             <h2>Assignment 4</h2>
             <div class="assignment-image">
                 <img src="assets/images/assignment-images/home-office-5037562_1280.jpg">
             </div>
-            <button class="github">Code</button>
-            <button class="github-2">Run</button>
+            <a href="https://github.com/HansakaV/New-Portfolio" class="github" target="_blank" >Code</a>
+            <a href="page/assgnment/assignment3-cases/Case1.html" class="github-2">Run</a>
+
         </div>
         <div class="assignment">
             <h2>Assignment 5</h2>
             <div class="assignment-image">
                 <img src="assets/images/assignment-images/home-office-5037562_1280.jpg">
             </div>
-            <button class="github">Code</button>
-            <button class="github-2">Run</button>
+            <a href="https://github.com/HansakaV/New-Portfolio" class="github" target="_blank" >Code</a>
+            <a href="page/assgnment/assignment3-cases/Case5.html" class="github-2">Run</a>
+
         </div>
         <div class="assignment">
             <h2>Assignment 6</h2>
             <div class="assignment-image">
                 <img src="assets/images/assignment-images/home-office-5037562_1280.jpg">
             </div>
-            <button class="github">Code</button>
-            <button class="github-2">Run</button>
+
+            <a href="https://github.com/HansakaV/New-Portfolio" class="github" target="_blank" >Code</a>
+            <a href="page/assgnment/assignment3-cases/Case6.html" class="github-2">Run</a>
+
         </div>
 
 
     </section>
+
 
     <!--Gallery-->
     <div class="projects">
@@ -342,7 +347,7 @@
             <div class="long-line"></div>
         </div>
     </div>
-    <section class="row">
+    <section id="gallery" class="row">
         <div class="nine columns">
             <div class="coverflow top10 bot10">
                 <a class="prev-arrow"></a>
@@ -357,7 +362,7 @@
     </section>
 
     <!--Contact Me-->
-    <div class="projects">
+    <div id="contact" class="projects">
         <div class="line-container">
             <div class="long-line"></div>
             <h2>Contact Me</h2>
@@ -413,6 +418,7 @@
             </div>
         </div>
     </footer>
+</section>
 </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="assets/js/script.js"></script>

@@ -2,17 +2,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const text = "Welcome to My portfolio.";
     const typewriterText = document.querySelector(".typewriter-text");
 
-    let index = 0;
-
-    function typeEffect() {
+    function typeEffect(index) {
         if (index < text.length) {
             typewriterText.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeEffect, 100); //
+            setTimeout(() => typeEffect(index + 1), 150);
+        } else {
+            // Effect finishes typing the text; stop here
+            setTimeout(() => {
+                typewriterText.innerHTML = text; // Ensure text remains on the page
+            }, 1000); // Optional delay before ensuring text stays
         }
     }
 
-    typeEffect();
+    typeEffect(0); // Start typing effect
 });
 
 

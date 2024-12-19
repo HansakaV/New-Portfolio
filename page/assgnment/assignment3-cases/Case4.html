@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case 4</title>
+    <link rel="stylesheet" href="assest/Style/normalize.css">
+    <style>
+        body{
+            overflow-x:hidden ;
+        }
+
+        section{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+       section>div{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 8vh;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        section>div>h1{
+            display: flex;
+            font-size: 30px;
+            margin: 0;
+        }
+
+        section>h1{
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            font-size: 100px;
+        }
+
+        #section1>div{
+            background: red;
+        }
+        #section1{
+            background: white;
+        }
+        #section2>div{
+            background: blue;
+        }
+        #section2{
+            background: lightblue;
+        }
+
+        #section3>div{
+              background: gray;
+        }
+        #section3{
+            background: lightgray;
+        }
+
+        #section4>div{
+            background: orangered;
+        }
+        #section4{
+            background: lightsalmon;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<section id="section1">
+    <div><h1>Card1</h1></div>
+    <h1>Hello</h1>
+</section>
+
+<section id="section2">
+    <div><h1>Card2</h1></div>
+    <h1>How</h1>
+</section>
+
+<section id="section3">
+    <div><h1>Card3</h1></div>
+    <h1>Are</h1>
+</section>
+
+<section id="section4">
+    <div><h1>Card4</h1></div>
+    <h1>You..?</h1>
+</section>
+
+</body>
+</html>
+
+

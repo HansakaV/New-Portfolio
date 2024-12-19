@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.6.0-web/css/all.min.css">
+
+    <title>case1</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: fit-content;
+
+
+        }
+
+        section>div{
+            display: flex;
+            width: 300px;
+            height: 60px;
+            background: mediumpurple;
+            margin: 50px;
+            margin-left: -250px;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 30px;
+            border-radius: 10px;
+
+            transition-duration: 1s;
+
+
+        }
+
+        section>div>div{
+            display: flex;
+           align-items: normal;
+
+
+        }
+
+        section>div:hover{
+            margin-left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<section>
+    <div> Home <i class="fa-solid fa-comment-code"></i> </div>
+    <div>World <i class="fa-solid fa-terminal"></i> </div>
+    <div> Money <i class="fa-brands fa-web-awesome"></i>  </div>
+    <div> Time <i class="fa-regular fa-message-code"></i> </div>
+    <div>Boom <i class="fa-sharp-duotone fa-solid fa-web-awesome"></i> </div>
+</section>
+<script src="lib/fontawesome-free-6.6.0-web/js/all.min.js"></script>
+</body>
+</html>

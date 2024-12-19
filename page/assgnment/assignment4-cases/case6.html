@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>case6</title>
+    <link rel="stylesheet" href="Style/normalize.css">
+    <style>
+        body{
+            overflow: hidden;
+        }
+
+        #div1>img:nth-child(1){
+            position: absolute;
+            top: 12em;
+            height: 250px;
+            width: 105em;
+            background-repeat: repeat-x;
+            display: block;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            animation: my-animation2 8s linear infinite ;
+
+        }
+        #div1>img:nth-child(2){
+            position: absolute;
+            bottom: 0;
+            animation: my-animation1 3s linear infinite ;
+        }
+
+        #div1>img:nth-child(3){
+            position: absolute;
+            bottom: -10em;
+            width: 30em;
+            height: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: auto;
+        }
+        #div3>img{
+            position: absolute;
+            width:5.75em;
+            height: auto;
+            animation: my-animation 3s ;
+            animation-iteration-count: infinite;
+        }
+
+        #div3>img:nth-child(1){
+            position: absolute;
+            height: auto;
+            left: -19.4em;
+            right: 0;
+            top: 0;
+            bottom: -15.6em;
+            margin: auto;
+        }
+        #div3>img:nth-child(2){
+            position: absolute;
+            height: auto;
+            left: 0;
+            right: -17.4em;
+            top: 0;
+            bottom: -15.6em;
+            margin: auto;
+        }
+
+
+        @keyframes my-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-45deg);
+            }to{
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes my-animation1 {
+            100%{
+                 transform: translate(-3400px);
+             }
+        }
+
+        @keyframes my-animation2 {
+            100%{
+                transform: translate(-160px);
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+<section>
+    <img src="image/case6--images/sky.jpg" alt="">
+    <div id="div1">
+        <img src="image/case6--images/city.png" alt="">
+        <img src="image/case6--images/road.jpg" alt="">
+        <img src="image/case6--images/car.png" alt="">
+
+        <div id="div3">
+            <img src="image/case6--images/wheel.png" alt="">
+            <img src="image/case6--images/wheel.png" alt="">
+
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

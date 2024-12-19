@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="Style/normalize.css">
+
+    <style>
+        body{
+            overflow: hidden;
+        }
+        div{
+            width: 120px;
+            height: 80px;
+            background: darkslategray;
+            border-radius: 10px;
+            animation: my-animation 3s infinite;
+        }
+
+        @keyframes my-animation {
+            0% {
+                margin-left: 0;
+                margin-top: 0;
+                background-color: firebrick;
+
+
+
+            }
+            25% {
+                margin-left: calc(100vw - 150px);
+                margin-top: 0;
+                transform: rotate(360deg);
+                background-color: blueviolet;
+
+
+            }
+            50% {
+                margin-left: calc(100vw - 150px);
+                margin-top: calc(100vh - 80px);
+                transform: rotate(360deg);
+                background-color: brown;
+
+
+            }
+            75% {
+                margin-left:0;
+                margin-top: calc(100vh - 80px);
+                background-color: khaki;
+                transform: rotate(360deg);
+
+
+            }
+            100% {
+
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div>
+
+</div>
+
+</body>
+</html>
